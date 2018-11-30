@@ -3,32 +3,32 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+import Header from './header/header'
 import './layout.css'
 
+const query = graphql`
+query SiteTitleQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+`;
 const Layout = ({ children }) => (
   <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
+    query={query}
+    render={({ site }) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'jacinto Rodrigues', content: 'jacinto Rodrigues' },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={site.siteMetadata.title} />
         <div
           style={{
             margin: '0 auto',
