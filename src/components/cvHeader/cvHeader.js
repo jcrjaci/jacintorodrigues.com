@@ -40,6 +40,7 @@ const ExternalLink = styled.a`
 padding: 0 3px;
 cursor: pointer;
 color: inherit;
+text-decoration: none;
 `;
 
 const OneDetail = ({ icon, link, description }) => (
