@@ -1,35 +1,42 @@
 import React from 'react'
+import styled from "styled-components"
+
+const Container = styled.div`
+  display: flex;
+`;
+
+const SectionName = styled.div`
+  flex: 1;
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 30px;
+  text-transform: uppercase;
+`;
+
+const Underline = styled.div`
+  background-color: #b32500;
+  height: 10px;
+  margin-top: 5px;
+`;
+
+const Content = styled.div`
+  flex: 4;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-bottom: 0;
+`;
 
 const CvSection = ({ name, content }) => (
-    <div style={{
-      display: 'flex',
-      // marginTop: '20px',
-    }}>
-      <div style={{
-        flex: 1,
-        color: '#000',
-        fontWeight: '700',
-        fontSize: '20px',
-        marginRight: '30px',
-        textTransform: 'uppercase'
-      }}>
-        {name}
-        <div style={{
-          height: '10px',
-          backgroundColor: '#b32500',
-          marginTop: '5px',
-        }}>
-        </div >
-      </div >
-      <div style={{
-        flex: 4,
-        fontSize: '11px',
-        lineHeight: '1.5',
-        marginBottom: '0',
-      }}>
+  <Container>
+    <SectionName>
+      {name}
+      <Underline />
+    </SectionName >
+    <Content>
       {content}
-      </div >
-    </div >
+    </Content >
+  </ Container>
 )
 
 export default CvSection;
