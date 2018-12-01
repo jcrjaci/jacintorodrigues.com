@@ -1,54 +1,114 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import styled from "styled-components"
+import { StaticQuery, graphql } from 'gatsby'
+
 import { FaEnvelope, FaGlobe, FaPhone, FaMapMarker, FaLinkedin, FaGithub } from 'react-icons/fa';
 
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  margin-bottom: 30px;
+`;
+
+const Name = styled.div`
+  flex: 3;
+  font-family: 'Bitter';
+  font-size: 42px;
+  font-weight: 700;
+  text-align: 'center';
+  text-transform: upperCase;
+`;
+
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 13px;
+`;
+
+const DetailLine = styled.div`
+align-items: center;
+display: flex;
+line-height: 1.25;
+`;
+
+const DetailSpan = styled.span`
+padding: 0 3px;
+`;
+
+const ExternalLink = styled.a`
+padding: 0 3px;
+cursor: pointer;
+color: inherit;
+`;
+
+const OneDetail = ({ icon, link, description }) => (
+  <DetailLine>
+      {link ?
+        <>
+          <ExternalLink href={link}>{icon}</ExternalLink>
+          <ExternalLink href={link}>{description}</ExternalLink>
+        </>
+        :
+          <>
+            <DetailSpan href={link}>{icon}</DetailSpan>
+            <DetailSpan href={link}>{description}</DetailSpan>
+          </>
+      }
+  </DetailLine>
+);
+
+const MultipleDetail = ({ icon, description, link }) => (
+  <DetailLine>
+    {icon.map((value, key) => (
+      <>
+      <ExternalLink href={link[key]}>{icon[key]}</ExternalLink>
+      <ExternalLink href={link[key]} >{description[key]}</ExternalLink>
+      </>
+    ))}
+  </DetailLine>
+);
 
 const CvHeader = () => (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '30px',
-    }}>
-      <div style={{
-        flex: 3,
-        fontSize: '42px',
-        textTransform: 'upperCase',
-        fontWeight: '700',
-        fontFamily: 'Bitter',
-        textAlign: 'center',
-      }}>
-        <span>Jacinto rodrigues</span>
-      </div >
-      <div style={{
-        flex: 1,
-        fontSize: '13px',
-        display: 'flex',
-        flexDirection: 'column'
-      }}>
-      <div style={{lineHeight: 1.25, display: 'flex', alignItems: 'center' }}>
-        <FaEnvelope/>
-        <span style={{paddingLeft: '3px' }}>me@jacintorodrigues.com</span>
-      </div>
-      <div style={{lineHeight: 1.25, display: 'flex', alignItems: 'center' }}>
-        <FaGlobe/>
-        <span style={{paddingLeft: '3px' }}>jacintorodrigues.com</span>
-      </div>
-      <div style={{lineHeight: 1.25, display: 'flex', alignItems: 'center' }}>
-        <FaPhone/>
-        <span style={{paddingLeft: '3px' }}>916 499 958</span>
-      </div>
-      <div style={{lineHeight: 1.25, display: 'flex', alignItems: 'center' }}>
-        <FaMapMarker/>
-        <span style={{paddingLeft: '3px' }}>Paços de Ferreira, Portugal</span>
-      </div>
-      <div style={{lineHeight: 1.25, display: 'flex', alignItems: 'center' }}>
-        <FaLinkedin/>
-        <span style={{padding: '0 3px' }}>jacintoRodrigues</span>
-        <FaGithub/>
-        <span style={{paddingLeft: '3px' }}>jcrjaci</span>
-      </div>
-      </div >
-    </div >
+  <StaticQuery
+    query={graphql`
+    query cvHeader {
+      site {
+        siteMetadata {
+          cv {
+            name
+            email
+            site
+            phone
+            location
+            linkedin
+            github
+            linkedinUrl
+            githubUrl
+          }
+        }
+      }
+    }
+    `}
+    render={({ site: { siteMetadata : { cv } } }) => (
+      <Container>
+        <Name >
+          <span>{cv.name}</span>
+        </Name >
+        <Details>
+          <OneDetail icon={<FaEnvelope/>} description={cv.email} link={`mailto:${cv.email}`} />
+          <OneDetail icon={<FaGlobe/>} description={cv.site} link={`http://${cv.site}`} />
+          <OneDetail icon={<FaPhone/>} description={cv.phone} />
+          <OneDetail icon={<FaMapMarker/>} description={cv.location} />
+          <MultipleDetail
+            icon={[<FaLinkedin/>, <FaGithub/>]}
+            description={[cv.linkedin, cv.github]}
+            link={[cv.linkedinUrl, cv.githubUrl]}
+          />
+        </Details >
+      </Container >
+    )}
+  />
 )
 
 export default CvHeader;

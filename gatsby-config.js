@@ -1,6 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: 'Jacinto Rodrigues',
+    cv: {
+      name: 'Jacinto Rodrigues',
+      email: 'me@jacintorodrigues.com',
+      site: 'jacintorodrigues.com',
+      phone: '916 499 958',
+      location: 'Paços de Ferreira, Portugal',
+      linkedin: 'jacintoRodrigues',
+      linkedinUrl: 'https://www.linkedin.com/in/jacintorodrigues/',
+      github: 'jcrjaci',
+      githubUrl: 'https://github.com/jcrjaci',
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -43,6 +54,7 @@ module.exports = {
           },
         ],
       },
-    }
+    },
+    `gatsby-plugin-styled-components`
   ],
 }
