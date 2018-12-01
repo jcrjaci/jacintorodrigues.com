@@ -9,7 +9,7 @@ const CvSection = ({ name, content }) => (
         flex: 1,
         color: '#000',
         fontWeight: '700',
-        fontSize: '24px',
+        fontSize: '20px',
         marginRight: '30px',
         textTransform: 'uppercase'
       }}>
@@ -22,7 +22,7 @@ const CvSection = ({ name, content }) => (
         </div >
       </div >
       <div style={{
-        flex: 3,
+        flex: 4,
         fontSize: '11px',
         lineHeight: '1.5',
         marginBottom: '0',

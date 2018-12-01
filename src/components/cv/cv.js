@@ -7,6 +7,7 @@ import Header from '../header/header'
 import BlankPage from '../blankPage/blankPage'
 import CvHeader from '../cvHeader/cvHeader';
 import CvSection from '../cvSection/cvSection';
+
 // import './layout.css'
 
 const Summary = (
