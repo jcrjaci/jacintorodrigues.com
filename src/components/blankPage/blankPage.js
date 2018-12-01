@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 const BlankPage = ({ children }) => (
     <div style={{
         width: '21cm',
+        // height: '39.7cm',
         height: '29.7cm',
-        padding: '10px 30px',
+        padding: '15px 30px',
         // padding: '30mm 45mm 30mm 45mm',
         backgroundColor: '#ffffff',
         margin: '0 auto',
