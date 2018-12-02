@@ -11,12 +11,12 @@ import CvSectionDescription from '../components/cvSectionDescription/cvSectionDe
 
 const Employments = ({ employments }) => (
   Object.keys(employments).map((value) => (
-    <>
+    <React.Fragment key={employments[value].name}>
       <CvSectionTitle text={employments[value].name} date={employments[value].date} url={employments[value].url} />
       <CvSectionTitle text={employments[value].position} />
       <CvSectionDescription text={employments[value].description} />
       <CvSectionDescription text={`Stack: ${employments[value].stack}`} />
-    </>
+    </React.Fragment>
   ))
 );
 
@@ -26,13 +26,13 @@ const Education = ({ education: { name, date, courses, description } }) => (
   <>
     <CvSectionTitle text={name} date={date} />
     {courses.map((course) => (
-      <CvSectionTitle text={course.name} date={course.date}/>
+      <CvSectionTitle key={course.name} text={course.name} date={course.date}/>
     ))}
     <CvSectionDescription text={description} />
   </>
 );
 
-const Skills = ({ skills }) => Object.keys(skills).map(value => <Skill type={value} description={skills[value]}/>); 
+const Skills = ({ skills }) => Object.keys(skills).map(value => <Skill key={value} type={value} description={skills[value]}/>); 
 
 const Index = () => (
     <StaticQuery

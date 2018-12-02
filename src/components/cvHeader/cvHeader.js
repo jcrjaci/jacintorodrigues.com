@@ -62,10 +62,10 @@ const OneDetail = ({ icon, link, description }) => (
 const MultipleDetail = ({ icon, description, link }) => (
   <DetailLine>
     {icon.map((value, key) => (
-      <>
-      <ExternalLink href={link[key]} target="_blank">{icon[key]}</ExternalLink>
-      <ExternalLink href={link[key]} target="_blank">{description[key]}</ExternalLink>
-      </>
+      <React.Fragment key={description[key]}>
+        <ExternalLink href={link[key]} target="_blank">{icon[key]}</ExternalLink>
+        <ExternalLink href={link[key]} target="_blank">{description[key]}</ExternalLink>
+      </ React.Fragment>
     ))}
   </DetailLine>
 );
