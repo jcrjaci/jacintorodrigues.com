@@ -15,9 +15,7 @@ const Employments = ({ employments }) => (
       <CvSectionTitle text={employments[value].name} date={employments[value].date} url={employments[value].url} />
       <CvSectionTitle text={employments[value].position} />
       <CvSectionDescription text={employments[value].description} />
-      {value !== 'saasbyside' &&
       <CvSectionDescription text={`Stack: ${employments[value].stack}`} />
-      }
     </>
   ))
 );
@@ -37,12 +35,12 @@ const Education = ({ education: { name, date, courses, description } }) => (
 const Skills = ({ skills }) => Object.keys(skills).map(value => <Skill type={value} description={skills[value]}/>); 
 
 const Index = () => (
-  <Cv>
     <StaticQuery
       query={graphql`
         query cv {
           site {
             siteMetadata {
+              title
               summary
               education {
                 name
@@ -106,30 +104,31 @@ const Index = () => (
           }
         }
       `}
-      render={({ site: { siteMetadata: { summary, education, employments, skills, hobbies }} }) => ( 
-        <BlankPage>
-          <CvHeader />
-          <CvSection name="Summary" content={<Description text={summary}/>} />
-          <CvSection
-            name="Education"
-            content={<Education education={education} />}
+      render={({ site: { siteMetadata: { title, summary, education, employments, skills, hobbies }} }) => (
+        <Cv title={title} >
+          <BlankPage>
+            <CvHeader />
+            <CvSection name="Summary" content={<Description text={summary}/>} />
+            <CvSection
+              name="Education"
+              content={<Education education={education} />}
             />
-          <CvSection
-            name="Employment"
-            content={<Employments employments={employments}/>}
+            <CvSection
+              name="Employment"
+              content={<Employments employments={employments}/>}
             />
-          <CvSection
-            name="Skills"
-            content={<Skills skills={skills}/>}
+            <CvSection
+              name="Skills"
+              content={<Skills skills={skills}/>}
             />
-          <CvSection
-            name="Hobbies"
-            content={<Description text={hobbies}/>}
+            <CvSection
+              name="Hobbies"
+              content={<Description text={hobbies}/>}
             />
           </BlankPage>
-        )}
+        </Cv>   
+      )}
       />
-  </Cv>
 );
 
 export default Index;

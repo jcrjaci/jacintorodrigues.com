@@ -1,44 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import styled from "styled-components"
 
-  const Cv = ({ children }) => (
-  <StaticQuery
-     query={graphql`
-     query asd {
-       site {
-         siteMetadata {
-           title
-         }
-       }
-     }
-     `}
-     render={({ site }) => (
-      <>
-      <Helmet
-        title={site.siteMetadata.title}
-        meta={[
-          { name: 'Description', content: 'Jacinto Rodrigues CV' },
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
-      <div
-        style={{
-          backgroundColor: '#ddd',
-          padding: '50px 0',
-          fontFamily: 'Bitter',
-        }}
-      >
-        {children}
-      </div>
-    </>)}
-   />
+const Container = styled.div`
+  background-color: #ddd;
+  font-family: 'Bitter';
+  padding: 50px 0;
+`;
+const Cv = ({ children, title }) => (
+  <>
+    <Helmet
+      title={title}
+      meta={[{ name: 'Description', content: 'Jacinto Rodrigues CV' }]}
+    >
+      <html lang="en" />
+    </Helmet>
+    <Container>{children}</ Container>
+  </>
 );
 
 Cv.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
 }
 
 export default Cv;
