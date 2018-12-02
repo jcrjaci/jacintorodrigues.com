@@ -47,13 +47,13 @@ const OneDetail = ({ icon, link, description }) => (
   <DetailLine>
       {link ?
         <>
-          <ExternalLink href={link}>{icon}</ExternalLink>
-          <ExternalLink href={link}>{description}</ExternalLink>
+          <ExternalLink href={link} target="_blank" aria-label={description}>{icon}</ExternalLink>
+          <ExternalLink href={link} target="_blank" aria-label={description}>{description}</ExternalLink>
         </>
         :
           <>
-            <DetailSpan href={link}>{icon}</DetailSpan>
-            <DetailSpan href={link}>{description}</DetailSpan>
+            <DetailSpan>{icon}</DetailSpan>
+            <DetailSpan>{description}</DetailSpan>
           </>
       }
   </DetailLine>
@@ -63,8 +63,8 @@ const MultipleDetail = ({ icon, description, link }) => (
   <DetailLine>
     {icon.map((value, key) => (
       <>
-      <ExternalLink href={link[key]}>{icon[key]}</ExternalLink>
-      <ExternalLink href={link[key]} >{description[key]}</ExternalLink>
+      <ExternalLink href={link[key]} target="_blank">{icon[key]}</ExternalLink>
+      <ExternalLink href={link[key]} target="_blank">{description[key]}</ExternalLink>
       </>
     ))}
   </DetailLine>

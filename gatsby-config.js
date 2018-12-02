@@ -5,7 +5,7 @@ module.exports = {
       name: 'Jacinto Rodrigues',
       email: 'me@jacintorodrigues.com',
       site: 'jacintorodrigues.com',
-      phone: '916 499 958',
+      phone: '(+351) 916 499 958',
       location: 'Paços de Ferreira, Portugal',
       linkedin: 'jacintoRodrigues',
       linkedinUrl: 'https://www.linkedin.com/in/jacintorodrigues/',

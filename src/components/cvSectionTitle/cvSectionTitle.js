@@ -26,7 +26,7 @@ text-decoration: none;
 const CvSectionTitle = ({ text, date, url }) => (
   <LineContainer>
     {url ?
-      <TitleLink href={url}>{text}</TitleLink>
+      <TitleLink href={url} target="_blank" aria-label={text}>{text}</TitleLink>
     :
       <Title>{text}</Title>
     }
