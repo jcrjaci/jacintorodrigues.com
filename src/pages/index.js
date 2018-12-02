@@ -1,38 +1,15 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Cv from '../components/cv/cv'
 import BlankPage from '../components/blankPage/blankPage'
+import Cv from '../components/cv/cv'
 import CvHeader from '../components/cvHeader/cvHeader';
 import CvSection from '../components/cvSection/cvSection';
-import Skill from '../components/skill/skill';
-import CvSectionTitle from '../components/cvSectionTitle/cvSectionTitle';
-import CvSectionDescription from '../components/cvSectionDescription/cvSectionDescription';
-
-const Employments = ({ employments }) => (
-  Object.keys(employments).map((value) => (
-    <React.Fragment key={employments[value].name}>
-      <CvSectionTitle text={employments[value].name} date={employments[value].date} url={employments[value].url} />
-      <CvSectionTitle text={employments[value].position} />
-      <CvSectionDescription text={employments[value].description} />
-      <CvSectionDescription text={`Stack: ${employments[value].stack}`} />
-    </React.Fragment>
-  ))
-);
-
-const Description = ({ text }) => <CvSectionDescription text={text} />; 
-
-const Education = ({ education: { name, date, courses, description } }) => (
-  <>
-    <CvSectionTitle text={name} date={date} />
-    {courses.map((course) => (
-      <CvSectionTitle key={course.name} text={course.name} date={course.date}/>
-    ))}
-    <CvSectionDescription text={description} />
-  </>
-);
-
-const Skills = ({ skills }) => Object.keys(skills).map(value => <Skill key={value} type={value} description={skills[value]}/>); 
+import Description from '../components/description/description';
+import Education from '../components/education/education';
+import Employments from '../components/employments/employments';
+import Hobbies from '../components/hobbies/hobbies';
+import Skills from '../components/skills/skills';
 
 const Index = () => (
     <StaticQuery
@@ -123,7 +100,7 @@ const Index = () => (
             />
             <CvSection
               name="Hobbies"
-              content={<Description text={hobbies}/>}
+              content={<Hobbies text={hobbies}/>}
             />
           </BlankPage>
         </Cv>   

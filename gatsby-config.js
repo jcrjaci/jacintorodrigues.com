@@ -23,7 +23,7 @@ module.exports = {
         { name: 'MSc Computer Engineering', date: '2015'},
         { name: 'BSc Computer Software Engineering', date: '2012'}
       ],
-      description: 'My Master Thesis entitled "Intelligent Collecting Data Tool", the goal was to collect diverse types of data related to photovoltaic inverters in order to make it possible to monitor a photovoltaic energy production plant, as well as the development of an alarmistic system that informs users in case errors occur.'
+      description: 'My Master Thesis was entitled "Intelligent Collecting Data Tool" and the goal was to collect diverse types of data related to photovoltaic inverters in order to make it possible to monitor a photovoltaic energy production plant, as well as to develop an alarmistic system that informs users in case errors occur.'
     },
     employments: {
       byside: {
@@ -41,7 +41,7 @@ module.exports = {
         position: 'Software Engineer',
         stack: 'JavaScript | React | React Native | Redux | Sass | Webpack | npm | Python | Django | Django Rest Framework | PostgreSQL | pytest',
         description: 'Development of start-ups from scratch that had an impact primarily on emergent markets.\
-        I worked directly, on a daily basis, with the operations team that was on the field and I also partook in strategic decisions.  I was responsible for every code developed in my project.'
+        I worked directly, on a daily basis, with the operations team that was on the field and I also partook in strategic decisions. I was responsible for all the code developed for this project.'
       },
       smartwatt: {
         name: 'Smartwatt',
@@ -75,7 +75,7 @@ module.exports = {
     skills : {
       frontend: 'JavaScript, React, Redux, jQuery, jest, npm, Yarn, gulp.js, Sass, socket.io, React Native, node.js',
       backend: 'PHP, Python, Silex, Phalcon, Laravel, Django, django rest framework, Kafka',
-      databases: 'MySQL, PostgreSQL, SQlite, elasticSearch, Redis',
+      databases: 'MySQL, PostgreSQL, SQlite, Elasticsearch, Redis',
       languages: 'Portuguese, English, Spanish'
     },
     hobbies: 'Travel and sports',
