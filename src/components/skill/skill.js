@@ -2,8 +2,8 @@ import React from 'react'
 import styled from "styled-components"
 
 const TechnologyContainer = styled.p`
-margin-bottom: 3px;
-text-align: justify;
+  margin-bottom: 3px;
+  text-align: justify;
 `;
 
 const TechnologyType = styled.span`
@@ -11,12 +11,16 @@ const TechnologyType = styled.span`
   text-transform: Uppercase;
 `;
 
+const TechnologyDescription = styled.span`
+  margin-left: 3px;
+`;
+
 const Skill = ({ type, description }) => (
   <TechnologyContainer>
     <TechnologyType>{type}:</TechnologyType>
-    <span>
+    <TechnologyDescription>
       {description}
-    </span>
+    </TechnologyDescription>
  </ TechnologyContainer>
  );
 
