@@ -44,6 +44,7 @@ const Index = () => (
               education {
                 name
                 description
+                date
                 courses {
                   name
                   date

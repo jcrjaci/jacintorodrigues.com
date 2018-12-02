@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 const TechnologyContainer = styled.p`
 margin-bottom: 3px;
+text-align: justify;
 `;
 
 const TechnologyType = styled.span`

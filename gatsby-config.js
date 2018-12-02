@@ -13,7 +13,7 @@ module.exports = {
       githubUrl: 'https://github.com/jcrjaci',
     },
     summary : 'I\'m a full-stack software engineer with almost 5 years of work experience within the industry. I´ve studied at ISEP (Porto, Portugal) from 2008 to 2015 where I took my Informatics Engineering Bachelor and my Informatics Engineering Masters.\
-    Currently, I\'m working as a Full-stack Software Engineer at BySide mainly working with Front-End technology.',
+    Currently, I\'m working as a Full-stack Software Engineer at BySide mainly working with Front-End technologies.',
     education: {
       name: 'ISEP - Instituto Superior de Engenharia do Porto',
       date: '2008 to 2015',
@@ -21,16 +21,16 @@ module.exports = {
         { name: 'MSc Computer Engineering', date: '2015'},
         { name: 'BSc Computer Software Engineering', date: '2012'}
       ],
-      description: 'My Master Thesis entitled \'Intelligent Collecting data Tool\', the goal was to collect diverse types of data related to photovoltaic inverters in order to make it possible to monitor a photovoltaic energy production plant, as well as the development of an alarmistic system that informs users in case errors occur. In addition, a web application was developed in order to support the management of the developed functionality.'
+      description: 'My Master Thesis entitled "Intelligent Collecting data Tool", the goal was to collect diverse types of data related to photovoltaic inverters in order to make it possible to monitor a photovoltaic energy production plant, as well as the development of an alarmistic system that informs users in case errors occur. In addition, a web application was developed in order to support the management of the developed functionality.'
     },
     employments: {
       byside: {
-        name: 'Byside',
+        name: 'BySide',
         date: 'Feb. 2017 to Current',
         position: 'Software Engineer',
-        description: 'Development of a Byside product named ByTalk.\
+        description: 'Development of a BySide product named ByTalk.\
         ByTalk is an online marketing platform aimed at small and medium-sized businesses that connects customer information to companies in real time and is able to facilitate dialogue between both \
-        In Byside i\'m a fullStack developer but more focused in frontend technologies.'
+        In BySide i\'m a fullStack developer but more focused in frontend technologies.'
       },
       seedstars: {
         name: 'Seedstars',
@@ -44,7 +44,7 @@ module.exports = {
         date: 'Mar. 2014 to May 2016',
         position: 'Software Engineer',
         description: 'Development of a web application and design of systems oriented to decision making with predictive information based on weather forecast, as well as systems oriented to photovoltaic production and consumption monitorization.\
-        I was responsible for developing and maintaining all the backend and webservices including REST APas well as architecting the databases.'
+        I was responsible for developing and maintaining all the backend and web services including REST APIs well as architecting the databases.'
       },
       scpdpi: {
         name: 'SCPdpi',
