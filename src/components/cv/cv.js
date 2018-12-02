@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from "styled-components"
 
-const Container = styled.div`
+const Container = styled.main`
   background-color: #ddd;
   font-family: 'Bitter';
   padding: 50px 0;
