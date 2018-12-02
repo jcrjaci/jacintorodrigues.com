@@ -8,13 +8,16 @@ import CvSection from '../components/cvSection/cvSection';
 import Skill from '../components/skill/skill';
 import CvSectionTitle from '../components/cvSectionTitle/cvSectionTitle';
 import CvSectionDescription from '../components/cvSectionDescription/cvSectionDescription';
-// TODO add links to emploeyment names
+
 const Employments = ({ employments }) => (
   Object.keys(employments).map((value) => (
     <>
       <CvSectionTitle text={employments[value].name} date={employments[value].date} url={employments[value].url} />
       <CvSectionTitle text={employments[value].position} />
       <CvSectionDescription text={employments[value].description} />
+      {value !== 'saasbyside' &&
+      <CvSectionDescription text={`Stack: ${employments[value].stack}`} />
+      }
     </>
   ))
 );
@@ -56,6 +59,7 @@ const Index = () => (
                   url
                   date
                   position
+                  stack
                   description
                 }
                 seedstars {
@@ -63,6 +67,7 @@ const Index = () => (
                   url
                   date
                   position
+                  stack
                   description
                 }
                 smartwatt {
@@ -70,6 +75,7 @@ const Index = () => (
                   url
                   date
                   position
+                  stack
                   description
                 }
                 scpdpi {
@@ -77,6 +83,7 @@ const Index = () => (
                   url
                   date
                   position
+                  stack
                   description
                 }
                 infoportugal {
@@ -84,6 +91,7 @@ const Index = () => (
                   url
                   date
                   position
+                  stack
                   description
                 }
               }

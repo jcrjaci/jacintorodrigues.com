@@ -19,7 +19,7 @@ import { StaticQuery, graphql } from 'gatsby'
       <Helmet
         title={site.siteMetadata.title}
         meta={[
-          { name: 'jacinto Rodrigues', content: 'jacinto Rodrigues' },
+          { name: 'Description', content: 'Jacinto Rodrigues CV' },
         ]}
       >
         <html lang="en" />
@@ -27,7 +27,7 @@ import { StaticQuery, graphql } from 'gatsby'
       <div
         style={{
           backgroundColor: '#ddd',
-          paddingTop: '50px',
+          padding: '50px 0',
           fontFamily: 'Bitter',
         }}
       >

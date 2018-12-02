@@ -2,12 +2,12 @@ import React from 'react'
 import styled from "styled-components"
 import { StaticQuery, graphql } from 'gatsby'
 
-import { FaEnvelope, FaGlobe, FaPhone, FaMapMarker, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaGlobe, FaPhone, FaMapMarker, FaLinkedin, FaGithub, FaSkype } from 'react-icons/fa';
 
 const Container = styled.div`
   align-items: center;
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 const Name = styled.div`
@@ -86,6 +86,8 @@ const CvHeader = () => (
             github
             linkedinUrl
             githubUrl
+            skype
+            skypeUrl
           }
         }
       }
@@ -106,6 +108,7 @@ const CvHeader = () => (
             description={[cv.linkedin, cv.github]}
             link={[cv.linkedinUrl, cv.githubUrl]}
           />
+          <OneDetail icon={<FaSkype/>} description={cv.skype} link={cv.skypeUrl} />
         </Details >
       </Container >
     )}
