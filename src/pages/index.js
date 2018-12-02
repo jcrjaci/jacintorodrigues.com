@@ -8,11 +8,11 @@ import CvSection from '../components/cvSection/cvSection';
 import Skill from '../components/skill/skill';
 import CvSectionTitle from '../components/cvSectionTitle/cvSectionTitle';
 import CvSectionDescription from '../components/cvSectionDescription/cvSectionDescription';
-
+// TODO add links to emploeyment names
 const Employments = ({ employments }) => (
   Object.keys(employments).map((value) => (
     <>
-      <CvSectionTitle text={employments[value].name} date={employments[value].date} />
+      <CvSectionTitle text={employments[value].name} date={employments[value].date} url={employments[value].url} />
       <CvSectionTitle text={employments[value].position} />
       <CvSectionDescription text={employments[value].description} />
     </>
@@ -53,30 +53,35 @@ const Index = () => (
               employments {
                 byside {
                   name
+                  url
                   date
                   position
                   description
                 }
                 seedstars {
                   name
+                  url
                   date
                   position
                   description
                 }
                 smartwatt {
                   name
+                  url
                   date
                   position
                   description
                 }
                 scpdpi {
                   name
+                  url
                   date
                   position
                   description
                 }
                 infoportugal {
                   name
+                  url
                   date
                   position
                   description

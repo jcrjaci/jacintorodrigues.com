@@ -26,6 +26,7 @@ module.exports = {
     employments: {
       byside: {
         name: 'BySide',
+        url: 'http://www.byside.com/',
         date: 'Feb. 2017 to Current',
         position: 'Software Engineer',
         description: 'Development of a BySide product named ByTalk.\
@@ -34,6 +35,7 @@ module.exports = {
       },
       seedstars: {
         name: 'Seedstars',
+        url: 'https://www.seedstars.com/',
         date: 'May 2016 to Feb. 2017',
         position: 'Software Engineer',
         description: 'Development of start-ups from scratch that had an impact primarily on emergent markets.\
@@ -41,6 +43,7 @@ module.exports = {
       },
       smartwatt: {
         name: 'Smartwatt',
+        url: 'https://smartwatt.pt/',
         date: 'Mar. 2014 to May 2016',
         position: 'Software Engineer',
         description: 'Development of a web application and design of systems oriented to decision making with predictive information based on weather forecast, as well as systems oriented to photovoltaic production and consumption monitorization.\
@@ -48,6 +51,7 @@ module.exports = {
       },
       scpdpi: {
         name: 'SCPdpi',
+        url: 'https://www.scpdpi.com/',
         date: 'Feb. 2013 to May 2013',
         position: 'Software Engineer',
         description: 'Development of a web application for management of membership dues.\
@@ -56,6 +60,7 @@ module.exports = {
       },
       infoportugal: {
         name: 'InfoPortugal S.A.',
+        url: 'http://infoportugal.pt/',
         date: 'Mar. 2012 to Sept. 2012',
         position: 'Intern Software Engineer',
         description: 'Development of an editing application for iPad magazines. \

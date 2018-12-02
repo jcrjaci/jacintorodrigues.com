@@ -16,9 +16,20 @@ const Date = styled.div`
   text-align: right;
 `;
 
-const CvSectionTitle = ({ text, date }) => (
+const TitleLink = styled.a`
+color: inherit;
+cursor: pointer;
+font-weight: 600;
+text-decoration: none;
+`;
+
+const CvSectionTitle = ({ text, date, url }) => (
   <LineContainer>
-    <Title>{text}</Title>
+    {url ?
+      <TitleLink href={url}>{text}</TitleLink>
+    :
+      <Title>{text}</Title>
+    }
     <Date>{date}</Date>
     </LineContainer>
   );
